@@ -2,6 +2,43 @@
 
 API REST para la empresa DBlandIT.
 
+**Listar los cursos**
+----
+  Lista los cursos existentes en base a los filtros solicitados.
+
+* **ENDPOINT**
+
+  `GET` /cursos
+  
+*  **Query Params**
+
+   **Optional:**
+ 
+   `duracion=[number]`
+
+   `anio=[integer]`
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+    ```json
+        [
+            { 
+                "_id": "87afdjladg87f6sa", 
+                "anio": 2020, 
+                "duracion": 60, 
+                "tema": "BigData", 
+                "alumnos": [{ "_id": "asfiauf897af", "nombre": "Kevin", "apellido": "Szuchet", "dni": "12345678", "direccion": "Av. Siempreviva 123", "nota": 10 }]
+            }                
+        ]
+    ```
+ 
+* **Error Response:**
+
+  * **Code:** 400 - BAD REQUEST <br />
+    **Content:** `{ error : "El {año/duración} debe ser numérico" || "El {año/duración} debe ser positivo" || "Debe elegir el tema del curso" }`
+
 **Crear cursos**
 ----
   Crea un nuevo curso.
