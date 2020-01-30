@@ -12,7 +12,14 @@ API REST para la empresa DBlandIT.
 
 * **Data Params**
 
-  None
+    ```json
+        { 
+            "anio": 2020, 
+            "duracion": 60, 
+            "tema": "BigData", 
+            "alumnos": [{ "nombre": "Kevin", "apellido": "Szuchet", "dni": "12345678", "direccion": "Av. Siempreviva 123", "nota": 10 }] 
+        }
+    ```
 
 * **Success Response:**
 
@@ -24,7 +31,7 @@ API REST para la empresa DBlandIT.
             "anio": 2020, 
             "duracion": 60, 
             "tema": "BigData", 
-            "alumnos": [{ "_id": "asfiauf897af", "nota": 10 }, { "_id": "asfiauf897af", "nota": 9.5 }] 
+            "alumnos": [{ "_id": "asfiauf897af", "nombre": "Kevin", "apellido": "Szuchet", "dni": "12345678", "direccion": "Av. Siempreviva 123", "nota": 10 }]
         }
     ```
  
