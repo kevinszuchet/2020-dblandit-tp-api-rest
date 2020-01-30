@@ -20,17 +20,17 @@ API REST para la empresa DBlandIT.
     **Content:** 
     ```json
         { 
-            _id: "87afdjladg87f6sa", 
-            anio: 2020, 
-            duracion: 60, 
-            tema: "BigData", 
-            alumnos: [{ _id: "asfiauf897af", nota: 10 }, { _id: "asfiauf897af", nota: 9.5 }] 
+            "_id": "87afdjladg87f6sa", 
+            "anio": 2020, 
+            "duracion": 60, 
+            "tema": "BigData", 
+            "alumnos": [{ "_id": "asfiauf897af", "nota": 10 }, { "_id": "asfiauf897af", "nota": 9.5 }] 
         }
     ```
  
 * **Error Response:**
 
-  * **Code:** 400 BAD REQUEST <br />
+  * **Code:** 400 - BAD REQUEST <br />
     **Content:** `{ error : "El {año/duración} debe ser numérico" || "El {año/duración} debe ser positivo" || "Debe elegir el tema del curso" }`
 
 ## Eliminar cursos
