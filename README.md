@@ -91,10 +91,43 @@ API REST para la empresa DBlandIT.
  
 * **Error Response:**
 
-  * **Code:** 404 - BAD REQUEST <br />
+  * **Code:** 404 - NOT FOUND <br />
     **Content:** `{ error : "El curso solicitado no existe" }`
 
-## Listar los cursos (permitiendo filtrar por su duración y año de dictado) en formato JSON
-## Obtener los alumnos de un curso en formato JSON.
-## Saber cuál fue el alumno que se destacó en un curso (el que tenga mayor nota).
+**Listar alumnos de un curso**
+----
+  Lista los alumnos del curso solicitado en base a los filtros elegidos.
 
+* **ENDPOINT**
+
+  `GET` /cursos/:id/alumnos
+
+*  **Query Params**
+
+   **Optional:**
+ 
+   `sortBy=[string {nombre,apellido,dni,nota}]`
+
+   `limit=[integer]`
+
+* **Success Response:**
+
+  * **Code:** 200
+    **Content:** 
+    ```json
+        [
+            { 
+                "_id": "asfiauf897af", 
+                "nombre": "Kevin", 
+                "apellido": "Szuchet", 
+                "dni": "12345678", 
+                "direccion": "Av. Siempreviva 123", 
+                "nota": 10 
+            }
+        ]
+    ```
+ 
+* **Error Response:**
+
+  * **Code:** 404 - NOT FOUND <br />
+    **Content:** `{ error : "El curso solicitado no existe" }`
