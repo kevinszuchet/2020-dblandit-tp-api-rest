@@ -4,7 +4,7 @@ API REST para la empresa DBlandIT.
 
 **Crear cursos**
 ----
-  Crea un nuevo curso
+  Crea un nuevo curso.
 
 * **ENDPOINT**
 
@@ -23,7 +23,7 @@ API REST para la empresa DBlandIT.
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 201 <br />
     **Content:** 
     ```json
         { 
@@ -40,7 +40,22 @@ API REST para la empresa DBlandIT.
   * **Code:** 400 - BAD REQUEST <br />
     **Content:** `{ error : "El {año/duración} debe ser numérico" || "El {año/duración} debe ser positivo" || "Debe elegir el tema del curso" }`
 
-## Eliminar cursos
+**Eliminar un curso**
+----
+  Elimina un curso existente.
+
+* **ENDPOINT**
+
+  `DELETE` /cursos/:id
+
+* **Success Response:**
+
+  * **Code:** 204
+ 
+* **Error Response:**
+
+  * **Code:** 404 - BAD REQUEST <br />
+    **Content:** `{ error : "El curso solicitado no existe" }`
 
 ## Listar los cursos (permitiendo filtrar por su duración y año de dictado) en formato JSON
 ## Obtener los alumnos de un curso en formato JSON.
