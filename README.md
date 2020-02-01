@@ -25,11 +25,11 @@ API REST para la empresa DBlandIT.
     ```json
         [
             { 
-                "_id": "87afdjladg87f6sa", 
+                "_id": "5e359ea10d297916bd30ef89", 
                 "anio": 2020, 
                 "duracion": 60, 
                 "tema": "BigData", 
-                "alumnos": [{ "_id": "asfiauf897af", "nombre": "Kevin", "apellido": "Szuchet", "dni": "12345678", "direccion": "Av. Siempreviva 123", "nota": 10 }]
+                "alumnos": [{ "_id": "5e359ea10d297916bd30efkla", "nombre": "Kevin", "apellido": "Szuchet", "dni": "12345678", "direccion": "Av. Siempreviva 123", "nota": 10 }]
             }                
         ]
     ```
@@ -64,7 +64,7 @@ API REST para la empresa DBlandIT.
     **Content:** 
     ```json
         { 
-            "_id": "87afdjladg87f6sa", 
+            "_id": "5e359ea10d297916bd30efkla", 
             "anio": 2020, 
             "duracion": 60, 
             "tema": "BigData", 
@@ -117,7 +117,7 @@ API REST para la empresa DBlandIT.
     ```json
         [
             { 
-                "_id": "asfiauf897af", 
+                "_id": "5e359ea10d297916bd30ef89", 
                 "nombre": "Kevin", 
                 "apellido": "Szuchet", 
                 "dni": "12345678", 
