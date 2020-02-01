@@ -108,6 +108,8 @@ API REST para la empresa DBlandIT.
  
    `sortBy=[string {nombre,apellido,dni,nota}]`
 
+   `sortType=[string {ASC, DESC, asc, desc}]`
+
    `limit=[integer]`
 
 * **Success Response:**

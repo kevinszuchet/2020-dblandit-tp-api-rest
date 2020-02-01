@@ -1,4 +1,5 @@
 const _ = require("lodash");
+const mongoose = require("mongoose");
 const { validationResult } = require('express-validator');
 const Curso = require("../../domain/models/cursos.model");
 
@@ -10,8 +11,6 @@ module.exports = {
 
         if (duracion)
             conditions = { ...conditions, duracion };
-
-        console.log(conditions)
 
         return Curso.find(conditions)
             .then(cursos => res.status(200).json(cursos))
@@ -42,4 +41,30 @@ module.exports = {
             .then(deleted => res.status(204).json(deleted))
             .catch(err => res.status(500).json(err));
     },
+
+    getAlumnos: ({ params: { id }, query: { sortBy, sortType, limit } }, res) => {
+        const pipeline = [
+            { $match: { _id: mongoose.Types.ObjectId(id) } },
+            { $unwind: "$alumnos" }
+        ];
+
+        if (sortBy) {
+            const sortConditions = {};
+            sortConditions[`alumnos.${sortBy}`] = sortType.toLowerCase() == "desc" ? -1 : 1;
+            pipeline.push({ $sort: sortConditions });
+        }
+
+        if (limit)
+            pipeline.push({ $limit: parseInt(limit) });
+
+        return Curso.aggregate(pipeline)
+            .then(cursos => {
+                if (_.isEmpty(cursos))
+                    res.status(404).json({ error : "El curso solicitado no existe" });
+
+                res.status(200).json(cursos.map(({ alumnos }) => alumnos))
+            })
+            .catch(err => res.status(500).json(err));
+
+    }
 }
