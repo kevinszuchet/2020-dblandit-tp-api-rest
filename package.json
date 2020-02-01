@@ -4,7 +4,7 @@
   "description": "Trabajo practico para la capacitacion de DBLandIt - Modulo Node.js",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon --inspect app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,7 +23,11 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-validator": "^6.3.1",
+    "lodash": "^4.17.15",
     "mongoose": "^5.8.10",
     "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
